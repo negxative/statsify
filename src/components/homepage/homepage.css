@@ -1,0 +1,21 @@
+
+.disc{
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: scale(30) rotate(0deg);
+    animation: spin 30s linear infinite paused;
+}
+
+@keyframes spin {
+    from {
+      transform: scale(30) rotate(0deg);
+    }
+    to {
+      transform: scale(30) rotate(360deg);
+    }
+  }
+
+.disc:hover{
+    animation-play-state: running;
+}
