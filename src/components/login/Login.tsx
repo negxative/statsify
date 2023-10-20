@@ -1,5 +1,7 @@
 import React from "react";
 import { globalContext } from "../../App";
+import Button from "antd/es/button";
+import Link from "antd/es/typography/Link";
 
 const CLIENT_ID = "74625cc4437a43a0b38c94a2e3ae8385";
 const REDIRECT_URI = "http://127.0.0.1:5173/";
@@ -24,6 +26,7 @@ export const Login = () => {
       window.location.hash = "";
       responseToken && localStorage.setItem("token", responseToken);
       responseToken && setToken(responseToken);
+      console.log("responseToken",responseToken)
     }
   }, []);
 
@@ -33,7 +36,7 @@ export const Login = () => {
     );
   };
 
-  return <button onClick={onClickHandler}>Login With spotify</button>;
+  return <Button type={"link"} className="text-4xl text-green-500" onClick={onClickHandler}>Login</Button>;
 };
 
 export default Login;
