@@ -1,12 +1,8 @@
-import React from "react";
-import { globalContext } from "../../App";
+
 import Login from "../login/Login";
-import Header from "../Header/header";
 import { BsSpotify } from "react-icons/bs";
 import "./homepage.css";
 export const Homepage = () => {
-  const { token } = React.useContext(globalContext) ?? { undefined };
- 
   return (
     <div className="wrapper">
       <div className="body w-full p-20 ">

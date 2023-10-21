@@ -1,22 +1,25 @@
-import { useState ,createContext} from 'react'
-import './App.css'
-import { Homepage } from './components/homepage/Homepage';
-import Header from './components/Header/header';
-interface globalContextType{
-  token:string | undefined,
-  setToken:React.Dispatch<React.SetStateAction<string | undefined>>,
-}
-export const globalContext = createContext<globalContextType | undefined>(undefined)
+import { useState } from "react";
+import "./App.css";
+import Header from "./components/Header/header";
+import { globalContext } from "./utils/Config";
+import { AppRouter } from "./Router/Router";
+import { BrowserRouter} from "react-router-dom"
 
 function App() {
-  const [token,setToken]=useState<string | undefined>();
-  console.log("token ",token)
+  const [token, setToken] = useState<string | undefined  >(
+    localStorage.getItem("token") || undefined
+  );
+  console.log("token ", token);
   return (
-    <globalContext.Provider value={{token,setToken}}>
-      <Header />
-      {!token ? <Homepage/> : <>hello</>}
+    <BrowserRouter>
+    <globalContext.Provider value={{ token, setToken }}>
+      <div className="h-full">
+        <Header />
+        <AppRouter/>
+      </div>
     </globalContext.Provider>
-  )
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;

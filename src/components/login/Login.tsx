@@ -1,8 +1,7 @@
 import React from "react";
-import { globalContext } from "../../App";
+import { globalContext } from "../../utils/Config";
 import Button from "antd/es/button";
-import Link from "antd/es/typography/Link";
-
+import {useNavigate} from "react-router-dom";
 const CLIENT_ID = "74625cc4437a43a0b38c94a2e3ae8385";
 const REDIRECT_URI = "http://127.0.0.1:5173/";
 const AUTH_ENDPOINT = "http://accounts.spotify.com/authorize";
@@ -12,7 +11,7 @@ export const Login = () => {
   const { setToken } = React.useContext(globalContext) ?? {
     setToken: () => {},
   };
-
+  const navigate=useNavigate();
   React.useEffect(() => {
     const hash = window.location?.hash;
     let responseToken: string | undefined =
@@ -24,9 +23,11 @@ export const Login = () => {
         .find((elem) => elem.startsWith("access_token"))
         ?.split("=")[1];
       window.location.hash = "";
-      responseToken && localStorage.setItem("token", responseToken);
-      responseToken && setToken(responseToken);
-      console.log("responseToken",responseToken)
+      if(responseToken){
+        localStorage.setItem("token", responseToken);
+        setToken(responseToken);
+        navigate("/categories/topArtists");
+      }
     }
   }, []);
 
