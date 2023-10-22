@@ -1,7 +1,4 @@
-import { Card } from "antd";
-import Meta from "antd/es/card/Meta";
 import React, { useState } from "react";
-import { MdSportsFootball } from "react-icons/md";
 import { globalContext } from "../../../utils/Config";
 import axios from "axios"
 import "./TopArtist.css"

@@ -1,5 +1,4 @@
 import { Button } from 'antd';
-import React from 'react'
 import { BsSpotify } from "react-icons/bs";
 
 export const Header = () => {
