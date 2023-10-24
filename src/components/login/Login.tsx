@@ -3,7 +3,7 @@ import { globalContext } from "../../utils/Config";
 import Button from "antd/es/button";
 import {useNavigate} from "react-router-dom";
 const CLIENT_ID = "74625cc4437a43a0b38c94a2e3ae8385";
-const REDIRECT_URI = "https://statzify.netlify.app/";
+const REDIRECT_URI = "http://127.0.0.1:5173/";
 const AUTH_ENDPOINT = "http://accounts.spotify.com/authorize";
 const RESPONSE_TYPE = "token";
 const scopes = ["user-read-private", "user-read-email", "user-library-read","user-top-read"];

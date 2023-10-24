@@ -9,10 +9,10 @@ function App() {
   const [token, setToken] = useState<string | undefined  >(
     localStorage.getItem("token") || undefined
   );
-  console.log("token ", token);
+  const [duration, setDuration] = useState<string>("short_term")
   return (
     <BrowserRouter>
-    <globalContext.Provider value={{ token, setToken }}>
+    <globalContext.Provider value={{ token, setToken,duration,setDuration }}>
       <div className="h-full">
         <Header />
         <AppRouter/>
