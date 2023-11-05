@@ -1,4 +1,3 @@
-import React from "react";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -14,7 +13,6 @@ import {
   Filler,
 } from "chart.js";
 import { Bar, Pie, PolarArea, Radar } from "react-chartjs-2";
-import { color } from "chart.js/helpers";
 
 ChartJS.register(
   CategoryScale,
@@ -83,7 +81,7 @@ const getBarData = ({ genres, occurences }: any) => {
     datasets: [
       {
         label: "Frequency",
-        data: genres.map((genre: string, index: number) => occurences[index]),
+        data: genres.map((_: any, index: number) => occurences[index]),
         backgroundColor: backgroudColorsArray,
       },
     ],

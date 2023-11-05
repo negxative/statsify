@@ -1,6 +1,3 @@
-import { useContext } from "react";
-import { globalContext } from "../../../utils/Config";
-import useTopSongsData from "../TopSongs/useTopSongsData";
 import useTopArtistsData from "../TopArtists/useTopArtistsData";
 export const useTopGenresData = (
   token: string | undefined,
