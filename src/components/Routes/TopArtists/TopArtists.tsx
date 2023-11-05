@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { globalContext } from "../../../utils/Config";
 import TopStatsTemplate from "../Common/TopStats/TopStatsTemplate";
 import useTopArtistsData from "./useTopArtistsData";
-import { getLimitMap } from "../Common/limitMapConstant";
+import { getLimitMap } from "../Common/dropdownMapConstant";
 
 export const TopArtists = () => {
   const { duration, token } = React.useContext(globalContext) ?? {
@@ -15,7 +15,7 @@ export const TopArtists = () => {
   return (
     <TopStatsTemplate
       data={data}
-      limitMap={getLimitMap(setlimit)}
+      dropdownMap={getLimitMap(setlimit)}
       statsType="Artists"
     />
   );
