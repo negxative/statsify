@@ -19,3 +19,10 @@
 .disc:hover{
     animation-play-state: running;
 }
+
+.audio-page{
+  position: absolute;
+  top: 7;
+  right:-30;
+  transition: all  1s ease-in-out;
+}
